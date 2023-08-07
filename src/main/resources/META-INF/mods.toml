@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+issueTrackerURL="https://github.com/Mrbysco/ItemFrament/issues"
+license="MIT"
+
+[[mods]]
+modId="itemframent"
+version="${file.jarVersion}"
+displayName="Item framen't"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/item-frament"
+authors="Mrbysco, ShyNieke"
+description='''
+What item frames?
+'''
+
+[[dependencies.itemframent]]
+modId="forge"
+mandatory=true
+versionRange="[43.2.0,)"
+ordering="NONE"
+side="BOTH"
