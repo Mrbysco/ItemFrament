@@ -1,1 +1,1 @@
-* Initial release
+* Fix crash on start
