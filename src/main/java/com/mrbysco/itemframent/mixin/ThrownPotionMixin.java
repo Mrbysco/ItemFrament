@@ -14,15 +14,13 @@ import java.util.List;
 
 @Mixin(ThrownPotion.class)
 public class ThrownPotionMixin {
-	@Inject(method = "applySplash(Ljava/util/List;Lnet/minecraft/world/entity/Entity;)V",
-			at = @At("HEAD"), remap = false)
+	@Inject(method = "applySplash(Ljava/util/List;Lnet/minecraft/world/entity/Entity;)V", at = @At("HEAD"))
 	public void applySplash(List<MobEffectInstance> effectInstanceList, @Nullable Entity entity, CallbackInfo ci) {
 		ThrownPotion potion = (ThrownPotion) (Object) this;
 		ItemFrament.handleSplash(effectInstanceList, potion);
 	}
 
-	@Inject(method = "applyWater()V",
-			at = @At("HEAD"), remap = false)
+	@Inject(method = "applyWater()V", at = @At("HEAD"))
 	private void applyWater(CallbackInfo ci) {
 		ThrownPotion potion = (ThrownPotion) (Object) this;
 		ItemFrament.handleWater(potion);
