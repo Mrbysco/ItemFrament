@@ -24,7 +24,7 @@ public class ItemFrament {
 		boolean invisibility = effectInstanceList.stream().anyMatch(instance -> instance.getEffect() == MobEffects.INVISIBILITY);
 		if (invisibility) {
 			AABB checkBox = thrownPotion.getBoundingBox().inflate(4.0D, 2.0D, 4.0D);
-			List<ItemFrame> itemFrames = thrownPotion.level.getEntitiesOfClass(ItemFrame.class, checkBox);
+			List<ItemFrame> itemFrames = thrownPotion.level().getEntitiesOfClass(ItemFrame.class, checkBox);
 			for (ItemFrame frame : itemFrames) {
 				if (!frame.isInvisible())
 					frame.setInvisible(true);
@@ -34,7 +34,7 @@ public class ItemFrament {
 
 	public static void handleWater(ThrownPotion thrownPotion) {
 		AABB checkBox = thrownPotion.getBoundingBox().inflate(4.0D, 2.0D, 4.0D);
-		List<ItemFrame> itemFrames = thrownPotion.level.getEntitiesOfClass(ItemFrame.class, checkBox);
+		List<ItemFrame> itemFrames = thrownPotion.level().getEntitiesOfClass(ItemFrame.class, checkBox);
 		for (ItemFrame frame : itemFrames) {
 			if (frame.isInvisible())
 				frame.setInvisible(false);

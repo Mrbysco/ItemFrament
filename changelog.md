@@ -1,1 +1,1 @@
-* Fix crash on start
+* Initial update to 1.20
