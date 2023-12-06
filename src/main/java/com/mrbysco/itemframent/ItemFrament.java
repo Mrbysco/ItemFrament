@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
 
 import java.util.List;
@@ -23,8 +23,7 @@ public class ItemFrament {
 	public static void handleSplash(List<MobEffectInstance> effectInstanceList, ThrownPotion thrownPotion) {
 		boolean invisibility = effectInstanceList.stream().anyMatch(instance -> instance.getEffect() == MobEffects.INVISIBILITY);
 		if (invisibility) {
-			AABB checkBox = thrownPotion.getBoundingBox().inflate(4.0D, 2.0D, 4.0D);
-			List<ItemFrame> itemFrames = thrownPotion.level().getEntitiesOfClass(ItemFrame.class, checkBox);
+			List<ItemFrame> itemFrames = getFrames(thrownPotion);
 			for (ItemFrame frame : itemFrames) {
 				if (!frame.isInvisible())
 					frame.setInvisible(true);
@@ -33,11 +32,15 @@ public class ItemFrament {
 	}
 
 	public static void handleWater(ThrownPotion thrownPotion) {
-		AABB checkBox = thrownPotion.getBoundingBox().inflate(4.0D, 2.0D, 4.0D);
-		List<ItemFrame> itemFrames = thrownPotion.level().getEntitiesOfClass(ItemFrame.class, checkBox);
+		List<ItemFrame> itemFrames = getFrames(thrownPotion);
 		for (ItemFrame frame : itemFrames) {
 			if (frame.isInvisible())
 				frame.setInvisible(false);
 		}
+	}
+
+	private static List<ItemFrame> getFrames(ThrownPotion thrownPotion) {
+		AABB checkBox = thrownPotion.getBoundingBox().inflate(4.0D, 2.0D, 4.0D);
+		return thrownPotion.level().getEntitiesOfClass(ItemFrame.class, checkBox);
 	}
 }
