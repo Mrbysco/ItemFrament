@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "itemframent",
+  "version": "${version}",
+  "name": "Item framen't",
+  "description": "What item frames?",
+  "authors": [
+    "Mrbysco", "ShyNieke"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/item-frament",
+    "sources": "https://github.com/Mrbysco/ItemFrament",
+    "issues": "https://github.com/Mrbysco/ItemFrament/issues"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.mrbysco.itemframent.ItemFramentFabric"
+    ]
+  },
+  "mixins": [
+    "itemframent.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "fabric": "*",
+    "minecraft": "~1.20",
+    "java": ">=17"
+  }
+}
+  
