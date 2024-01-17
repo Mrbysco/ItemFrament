@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[1,)"
+loaderVersion="[2,)"
 issueTrackerURL="https://github.com/Mrbysco/ItemFrament/issues"
 license="MIT"
 
@@ -15,8 +15,8 @@ What item frames?
 
 [[dependencies.itemframent]]
 modId="neoforge"
-mandatory=true
-versionRange="[20.2.59-beta,)"
+type="REQUIRED"
+versionRange="[20.4.70-beta,)"
 ordering="NONE"
 side="BOTH"
 [[mixins]]
