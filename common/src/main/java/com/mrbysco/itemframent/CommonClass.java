@@ -12,7 +12,7 @@ public class CommonClass {
 	public static void handleSplash(Iterable<MobEffectInstance> effectInstanceList, ThrownPotion thrownPotion) {
 		AABB checkBox = thrownPotion.getBoundingBox().inflate(4.0D, 2.0D, 4.0D);
 		effectInstanceList.forEach(instance -> {
-			if (instance.getEffect() == MobEffects.INVISIBILITY) {
+			if (instance.is(MobEffects.INVISIBILITY)) {
 				List<ItemFrame> itemFrames = thrownPotion.level().getEntitiesOfClass(ItemFrame.class, checkBox);
 				for (ItemFrame frame : itemFrames) {
 					if (!frame.isInvisible())
