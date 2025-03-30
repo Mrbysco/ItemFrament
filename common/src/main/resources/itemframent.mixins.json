@@ -6,7 +6,9 @@
   "refmap": "itemframent.refmap.json",
   "target": "@env(DEFAULT)",
   "mixins": [
-    "ThrownPotionMixin"
+    "ThrownLingeringPotionMixin",
+    "ThrownPotionMixin",
+    "ThrownSplashPotionMixin"
   ],
   "client": [
   ],

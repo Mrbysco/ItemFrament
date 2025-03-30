@@ -16,7 +16,7 @@ What item frames?
 [[dependencies.itemframent]]
 modId="neoforge"
 type="REQUIRED"
-versionRange="[21.4.0-beta,)"
+versionRange="[21.5.0-beta,)"
 ordering="NONE"
 side="BOTH"
 [[mixins]]
