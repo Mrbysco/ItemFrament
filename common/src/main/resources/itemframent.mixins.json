@@ -3,7 +3,6 @@
   "minVersion": "0.8.4",
   "compatibilityLevel": "JAVA_21",
   "package": "com.mrbysco.itemframent.mixin",
-  "refmap": "itemframent.refmap.json",
   "target": "@env(DEFAULT)",
   "mixins": [
     "ThrownLingeringPotionMixin",
